@@ -2,6 +2,22 @@ pytorch 不同版本安装
 
 pip3 install torch==1.3.1+cu100 torchvision==0.4.2+cu100 -f https://download.pytorch.org/whl/torch_stable.html
 
+Cmake
+
+###----------------add pytorch c++ header
+
+execute_process (COMMAND python -c "import torch;print(torch.__file__[:torch.__file__.find('torch')]+'torch')"
+        OUTPUT_VARIABLE PYTHON_SITE_PACKAGES OUTPUT_STRIP_TRAILING_WHITESPACE)
+MESSAGE( STATUS "output = ${PYTHON_SITE_PACKAGES},${OUTPUT_STRIP_TRAILING_WHITESPACE}")
+
+#find_package(Python 3 REQUIRED COMPONENTS Interpreter Development NumPy)
+##
+
+include_directories("${PYTHON_SITE_PACKAGES}/include")
+include_directories("${PYTHON_SITE_PACKAGES}/include/torch/csrc/api/include")
+include_directories("${PYTHON_SITE_PACKAGES}/include/TH")
+include_directories("${PYTHON_SITE_PACKAGES}/include/THC")
+
 
 
 
