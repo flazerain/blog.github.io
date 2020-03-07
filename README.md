@@ -1,3 +1,10 @@
+pytorch 不同版本安装
+
+pip3 install torch==1.3.1+cu100 torchvision==0.4.2+cu100 -f https://download.pytorch.org/whl/torch_stable.html
+
+
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/flazerain/blog.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
